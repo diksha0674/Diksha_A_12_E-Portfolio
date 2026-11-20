@@ -1,0 +1,31 @@
+{% extends "layout.html" %}
+{% block title %}Create account · Medicore{% endblock %}
+{% block content %}
+<div class="auth-wrap">
+  <section class="auth-story">
+    <div class="eyebrow"><span class="eyebrow-dot"></span> A SIMPLER WAY TO CONNECT</div>
+    <h1>Bring your pharmacy conversation into <span>one place.</span></h1>
+    <p>Create a customer account to send prescription requests and stay in touch with your pharmacy.</p>
+    <div class="story-callout"><div class="callout-icon">✦</div><div><strong>Designed around clarity</strong><p>Keep your requests, messages, and status updates together.</p></div></div>
+  </section>
+  <section class="auth-card">
+    <div class="card-kicker">GET STARTED</div>
+    <h2>Create your account</h2>
+    <p class="muted">It only takes a moment to get started.</p>
+    <form method="post" action="{{ url_for('signup') }}">
+      <div class="mb-3">
+        <label class="form-label" for="username">Choose a username</label>
+        <input class="form-control form-control-lg" id="username" name="username" type="text" autocomplete="username" maxlength="100" required autofocus>
+      </div>
+      <div class="mb-2">
+        <label class="form-label" for="password">Create a password</label>
+        <input class="form-control form-control-lg" id="password" name="password" type="password" autocomplete="new-password" minlength="8" required>
+        <div class="form-text">Use at least 8 characters.</div>
+      </div>
+      <div class="role-note mb-4"><span class="role-note-icon">✓</span><span><strong>Customer account</strong><small>Pharmacist accounts are created separately by an administrator.</small></span></div>
+      <button class="btn btn-primary btn-lg w-100" type="submit">Create account <span aria-hidden="true">→</span></button>
+    </form>
+    <p class="auth-switch">Already have an account? <a href="{{ url_for('login') }}">Log in</a></p>
+  </section>
+</div>
+{% endblock %}
