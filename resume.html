@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Diksha Singhal | Web Designer &amp; Software Developer</title>
+  <meta name="description" content="Portfolio of Diksha Singhal, BCA student and web designer and software developer.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --paper: #F6F7F9;
+      --surface: #FFFFFF;
+      --ink: #1B1F24;
+      --muted: #5B6470;
+      --rule: #D9DDE3;
+      --accent: #2347D6;
+      --serif: "Newsreader", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+      --sans: "Public Sans", "Helvetica Neue", Arial, sans-serif;
+      --gutter: clamp(1.25rem, 4vw, 3rem);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--sans);
+      font-size: 1.0625rem;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: var(--accent); text-underline-offset: 0.2em; }
+    a:hover { text-decoration-thickness: 2px; }
+
+    :focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 3px;
+      border-radius: 2px;
+    }
+
+    .wrap {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 0 var(--gutter);
+    }
+
+    /* Top bar */
+    .topbar {
+      border-bottom: 1px solid var(--rule);
+      background: var(--paper);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .topbar .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-height: 4rem;
+      gap: 1rem;
+      flex-wrap: wrap;
+      padding-top: 0.5rem;
+      padding-bottom: 0.5rem;
+    }
+    .brand {
+      font-family: var(--serif);
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .topnav {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .topnav a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.95rem;
+    }
+    .topnav a:hover { color: var(--ink); }
+
+    /* Hero */
+    .hero {
+      padding: clamp(4rem, 12vw, 8rem) 0 clamp(3rem, 8vw, 5rem);
+    }
+    .hero h1 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: clamp(3.25rem, 10vw, 7.5rem);
+      line-height: 0.95;
+      letter-spacing: -0.03em;
+      margin: 0 0 1.5rem;
+    }
+    .role {
+      font-size: 1.25rem;
+      color: var(--muted);
+      margin: 0 0 2rem;
+      max-width: 36rem;
+    }
+    .intro {
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 2.6vw, 1.75rem);
+      line-height: 1.4;
+      max-width: 40rem;
+      margin: 0 0 2.5rem;
+    }
+    .actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.25rem;
+      border: 1px solid var(--ink);
+      color: var(--ink);
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+    .btn.solid {
+      background: var(--ink);
+      color: var(--surface);
+    }
+    .btn:hover { background: var(--ink); color: var(--surface); }
+    .btn.solid:hover { background: var(--accent); border-color: var(--accent); }
+
+    /* Sections: left heading column, right content column */
+    section {
+      border-top: 1px solid var(--rule);
+      padding: clamp(3rem, 7vw, 4.5rem) 0;
+    }
+    .split {
+      display: grid;
+      grid-template-columns: minmax(10rem, 1fr) 2.5fr;
+      gap: 2rem clamp(2rem, 6vw, 5rem);
+    }
+    .split h2 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 1.75rem;
+      line-height: 1.2;
+      margin: 0;
+    }
+    .split > div { min-width: 0; }
+
+    .about p {
+      margin: 0 0 1rem;
+      max-width: 42rem;
+    }
+
+    /* Education */
+    .edu-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .edu-list li {
+      display: grid;
+      grid-template-columns: 8rem 1fr;
+      gap: 0.5rem 1.5rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .edu-list li:first-child { padding-top: 0; }
+    .edu-list li:last-child { border-bottom: none; }
+    .when {
+      color: var(--muted);
+      font-size: 0.95rem;
+      padding-top: 0.15rem;
+    }
+    .edu-list h3 {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin: 0 0 0.2rem;
+    }
+    .edu-list p {
+      margin: 0;
+      color: var(--muted);
+    }
+    .score {
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    /* Skills */
+    .skills {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
+      gap: 2rem 2.5rem;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+    .skills h3 {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--muted);
+      margin: 0 0 0.6rem;
+    }
+    .skills p {
+      margin: 0;
+      font-size: 1.05rem;
+    }
+
+    /* Projects */
+    .project {
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--rule);
+    }
+    .project:first-child { padding-top: 0; }
+    .project:last-child { border-bottom: none; padding-bottom: 0; }
+    .project h3 {
+      font-family: var(--serif);
+      font-weight: 500;
+      font-size: 1.5rem;
+      margin: 0 0 0.25rem;
+    }
+    .stack {
+      color: var(--accent);
+      font-size: 0.95rem;
+      font-weight: 500;
+      margin: 0 0 0.75rem;
+    }
+    .project p {
+      margin: 0;
+      max-width: 40rem;
+    }
+
+    /* Contact */
+    .contact-email {
+      font-family: var(--serif);
+      font-size: clamp(1.6rem, 4vw, 2.5rem);
+      color: var(--ink);
+      text-decoration: none;
+      border-bottom: 2px solid var(--accent);
+      padding-bottom: 0.1rem;
+    }
+    .contact-email:hover { color: var(--accent); }
+    .contact-meta {
+      margin: 1.5rem 0 0;
+      color: var(--muted);
+    }
+
+    footer {
+      border-top: 1px solid var(--rule);
+      padding: 2rem 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.5rem 1rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 760px) {
+      .split { grid-template-columns: 1fr; }
+      .edu-list li { grid-template-columns: 1fr; gap: 0.2rem; }
+      .when { padding-top: 0; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="wrap">
+      <a class="brand" href="#top">Diksha Singhal</a>
+      <nav class="topnav" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#education">Education</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+
+    <div class="wrap hero">
+      <h1>Diksha<br>Singhal</h1>
+      <p class="role">Web designer and software developer</p>
+      <p class="intro">I build clean, useful websites and apps, and I enjoy solving real problems with technology.</p>
+      <div class="actions">
+        <a class="btn solid" href="#contact">Get in touch</a>
+        <a class="btn" href="diksha-singhal-resume.pdf" download>Download resume</a>
+      </div>
+    </div>
+
+    <section id="about">
+      <div class="wrap split">
+        <h2>About</h2>
+        <div class="about">
+          <p>I am a BCA second-year student with a solid understanding of programming and web development. I love learning new things and I am always looking for projects where I can grow, contribute, and make a difference.</p>
+          <p>My work covers web design with HTML, CSS, and JavaScript, mobile app development with Flutter and Dart, and database work with MySQL and Oracle. I also have experience in graphic design.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <div class="wrap split">
+        <h2>Education</h2>
+        <div>
+          <ol class="edu-list">
+            <li>
+              <span class="when">Present</span>
+              <div>
+                <h3>BCA, 2nd year</h3>
+                <p>Sangam University, Bhilwara &middot; CGPA <span class="score">8.71</span></p>
+              </div>
+            </li>
+            <li>
+              <span class="when">2021 to 2022</span>
+              <div>
+                <h3>Class 12</h3>
+                <p>Sophia Senior Secondary School &middot; <span class="score">88.8%</span></p>
+              </div>
+            </li>
+            <li>
+              <span class="when">2019 to 2020</span>
+              <div>
+                <h3>Class 10</h3>
+                <p>Sophia Senior Secondary School &middot; <span class="score">80%</span></p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="wrap split">
+        <h2>Skills</h2>
+        <ul class="skills">
+          <li>
+            <h3>Programming</h3>
+            <p>C, C++, C#</p>
+          </li>
+          <li>
+            <h3>Web development</h3>
+            <p>HTML, CSS, JavaScript</p>
+          </li>
+          <li>
+            <h3>Databases</h3>
+            <p>MySQL, Oracle</p>
+          </li>
+          <li>
+            <h3>Design</h3>
+            <p>Web design, graphic design</p>
+          </li>
+          <li>
+            <h3>Languages</h3>
+            <p>English, Hindi</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap split">
+        <h2>Projects</h2>
+        <div>
+          <article class="project">
+            <h3>School App</h3>
+            <p class="stack">Flutter and Dart</p>
+            <p>A mobile application built for a school, developed with Flutter and Dart.</p>
+          </article>
+          <article class="project">
+            <h3>Personal Website</h3>
+            <p class="stack">HTML and CSS</p>
+            <p>A responsive website built from scratch with HTML and CSS.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap split">
+        <h2>Contact</h2>
+        <div>
+          <a class="contact-email" href="mailto:Singhaldiksha3445@gmail.com">Singhaldiksha3445@gmail.com</a>
+          <p class="contact-meta">Phone: 77424 56963</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span>Diksha Singhal</span>
+      <span>Web designer and software developer</span>
+    </div>
+  </footer>
+
+</body>
+</html>
