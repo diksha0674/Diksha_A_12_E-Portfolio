@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+{% block title %}Customer dashboard · Medicore{% endblock %}
+{% block content %}
+<div class="page-heading">
+  <div><div class="eyebrow dark-eyebrow">CUSTOMER WORKSPACE</div><h1>Your prescription requests</h1><p>Track requests and keep your pharmacy conversation in one place.</p></div>
+  <a class="btn btn-primary" href="{{ url_for('new_prescription') }}">＋ New request</a>
+</div>
+{% set pending_count = requests|selectattr('status', 'equalto', 'Pending')|list|length %}
+{% set available_count = requests|selectattr('status', 'equalto', 'Available')|list|length %}
+<div class="stats-grid">
+  <div class="stat-card"><span class="stat-label">TOTAL REQUESTS</span><strong>{{ requests|length }}</strong><span class="stat-note">All your submissions</span><span class="stat-icon">▤</span></div>
+  <div class="stat-card"><span class="stat-label">PENDING</span><strong>{{ pending_count }}</strong><span class="stat-note">Waiting for review</span><span class="stat-icon">◷</span></div>
+  <div class="stat-card"><span class="stat-label">AVAILABLE</span><strong>{{ available_count }}</strong><span class="stat-note">Marked available</span><span class="stat-icon">✓</span></div>
+</div>
+<section class="content-card">
+  <div class="section-heading"><div><h2>Request history</h2><p>Your recent prescription activity</p></div><span class="count-pill">{{ requests|length }} total</span></div>
+  {% if requests %}
+  <div class="table-responsive">
+    <table class="table align-middle medicore-table">
+      <thead><tr><th>REQUEST</th><th>SUBMITTED</th><th>STATUS</th><th class="text-end">ACTIONS</th></tr></thead>
+      <tbody>
+      {% for req in requests %}
+        <tr>
+          <td><div class="request-title">Prescription #{{ req.id }}</div><div class="request-subtitle">{{ req.medicines_text|truncate(76, true) }}</div></td>
+          <td class="date-cell">{{ req.timestamp.strftime('%d %b %Y, %H:%M') if req.timestamp else '—' }}</td>
+          <td><span class="status-badge status-{{ req.status|lower|replace(' ', '-') }}">{{ req.status }}</span></td>
+          <td><div class="action-group">
+            <a class="btn btn-sm btn-soft" href="{{ url_for('request_details', request_id=req.id) }}">View details</a>
+            <form method="post" action="{{ url_for('delete_request', request_id=req.id) }}" onsubmit="return confirm('Delete this request and its chat history?');">
+              <button class="btn btn-sm btn-danger-soft" type="submit">Delete</button>
+            </form>
+          </div></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <div class="empty-state"><div class="empty-icon">▤</div><h3>No requests yet</h3><p>When you submit a prescription request, it will appear here.</p><a class="btn btn-primary" href="{{ url_for('new_prescription') }}">Create your first request</a></div>
+  {% endif %}
+</section>
+{% endblock %}

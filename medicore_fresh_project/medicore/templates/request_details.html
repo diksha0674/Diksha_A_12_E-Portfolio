@@ -1,0 +1,56 @@
+{% extends "layout.html" %}
+{% block title %}Prescription #{{ req.id }} · Medicore{% endblock %}
+{% block extra_head %}
+<script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+{% endblock %}
+{% block content %}
+<div class="details-top">
+  <a class="back-link" href="{{ url_for('pharmacist_dashboard') if current_user.role == 'pharmacist' else url_for('customer_dashboard') }}">← Back to dashboard</a>
+  <span class="status-badge status-{{ req.status|lower|replace(' ', '-') }}" id="request-status">{{ req.status }}</span>
+</div>
+<div id="chat-container" data-request-id="{{ req.id }}" class="details-layout">
+  <section class="content-card request-overview">
+    <div class="eyebrow dark-eyebrow">REQUEST DETAILS</div>
+    <h1>Prescription #{{ req.id }}</h1>
+    <p class="muted">Submitted {{ req.timestamp.strftime('%d %B %Y at %H:%M') if req.timestamp else 'date unavailable' }}</p>
+    <div class="detail-divider"></div>
+    <div class="detail-label">CUSTOMER</div><div class="detail-value">{{ customer.username }}</div>
+    <div class="detail-label mt-4">MEDICINE LIST</div>
+    <div class="medicine-display">{{ req.medicines_text }}</div>
+    {% if current_user.role == 'pharmacist' %}
+    <div class="detail-divider"></div>
+    <div class="detail-label">UPDATE REQUEST STATUS</div>
+    <p class="muted small">Choose the appropriate status after reviewing the request.</p>
+    <div class="status-actions">
+      <button class="btn btn-success-soft status-change-btn" data-status="Available" type="button">✓ Mark available</button>
+      <button class="btn btn-danger-soft status-change-btn" data-status="Unavailable" type="button">× Mark unavailable</button>
+    </div>
+    {% endif %}
+    <div id="chat-notice" class="chat-notice d-none" role="status"></div>
+  </section>
+  <section class="content-card chat-card">
+    <div class="chat-header"><div class="chat-avatar">M+</div><div><h2>Request conversation</h2><p><span class="live-dot"></span> Live chat</p></div></div>
+    <div id="chat-messages" class="chat-messages" aria-live="polite">
+      {% if chat_history %}
+        {% for message in chat_history %}
+          <div class="chat-message {% if message.sender_id == current_user.id %}chat-message-own{% endif %}">
+            <div class="chat-message-meta"><strong class="chat-message-sender">{{ message.sender.username }}</strong><span class="chat-message-time">{{ message.timestamp.strftime('%d %b, %H:%M') if message.timestamp else '' }}</span></div>
+            <div class="chat-message-text">{{ message.message_text }}</div>
+          </div>
+        {% endfor %}
+      {% else %}
+        <div id="chat-empty" class="chat-empty"><span>✦</span><strong>Start the conversation</strong><p>Messages about this request will appear here.</p></div>
+      {% endif %}
+    </div>
+    <form id="chat-form" class="chat-composer">
+      <label class="visually-hidden" for="message-input">Write a message</label>
+      <input id="message-input" class="form-control" type="text" maxlength="2000" placeholder="Write a message…" autocomplete="off">
+      <button id="send-button" class="btn btn-primary" type="submit" aria-label="Send message">Send ↑</button>
+    </form>
+    <div class="chat-footnote">Please keep messages relevant to this prescription request.</div>
+  </section>
+</div>
+{% endblock %}
+{% block scripts %}
+<script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+{% endblock %}
