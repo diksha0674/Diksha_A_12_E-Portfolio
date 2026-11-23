@@ -1,0 +1,304 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f9f5;
+    color: #26352c;
+    line-height: 1.7;
+}
+
+/* Header */
+
+header {
+    background-color: #173f35;
+    color: white;
+    padding: 18px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.logo span {
+    color: #b5e48c;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: bold;
+}
+
+nav a:hover,
+nav a.active {
+    color: #b5e48c;
+}
+
+.menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Hero Section */
+
+.hero {
+    min-height: 390px;
+    padding: 80px 10%;
+    background: linear-gradient(120deg, #173f35, #427c55);
+    color: white;
+    display: flex;
+    align-items: center;
+}
+
+.hero-content {
+    max-width: 650px;
+}
+
+.hero h1 {
+    font-size: 45px;
+    line-height: 1.2;
+    margin: 15px 0;
+}
+
+.tagline {
+    color: #b5e48c;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+.hero-content p {
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    background-color: #b5e48c;
+    color: #173f35;
+    padding: 12px 25px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.btn:hover {
+    background-color: white;
+}
+
+/* General Sections */
+
+.intro,
+.categories,
+.awareness,
+.about-section {
+    padding: 55px 9%;
+    text-align: center;
+}
+
+h2 {
+    color: #245b40;
+    margin-bottom: 15px;
+}
+
+.subtitle {
+    margin-bottom: 25px;
+    color: #666;
+}
+
+/* Category Cards */
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.card {
+    background: white;
+    padding: 25px 18px;
+    border-radius: 10px;
+    box-shadow: 0 3px 12px #00000012;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-7px);
+}
+
+.card-icon {
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+
+.card h3 {
+    color: #245b40;
+    margin-bottom: 10px;
+}
+
+.awareness {
+    background: #e6f2e4;
+}
+
+/* Page Heading */
+
+.page-heading {
+    text-align: center;
+    padding: 45px 10%;
+    background-color: #e6f2e4;
+}
+
+.page-heading h1 {
+    color: #245b40;
+    font-size: 35px;
+}
+
+/* Category Sections */
+
+.category-section {
+    background: white;
+    margin: 25px 9%;
+    padding: 25px;
+    border-left: 5px solid #4d9562;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px #00000010;
+}
+
+/* Blog Layout */
+
+.blog-layout {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 30px;
+    padding: 35px 8%;
+}
+
+.blog-post {
+    background: white;
+    padding: 30px;
+    margin-bottom: 25px;
+    border-radius: 8px;
+    box-shadow: 0 3px 12px #00000010;
+}
+
+.blog-post h2 {
+    margin-top: 12px;
+}
+
+.blog-post h3 {
+    color: #245b40;
+    margin-top: 20px;
+}
+
+.blog-post ul {
+    padding-left: 25px;
+}
+
+.post-category {
+    color: #4d9562;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+address {
+    margin-top: 20px;
+    padding: 15px;
+    background: #eef5ec;
+    font-style: normal;
+    border-radius: 5px;
+}
+
+/* Sidebar */
+
+.sidebar {
+    background: #e6f2e4;
+    padding: 25px;
+    border-radius: 8px;
+    height: fit-content;
+}
+
+.related {
+    background: white;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+}
+
+.related h3 {
+    color: #245b40;
+    font-size: 16px;
+}
+
+/* Footer */
+
+footer {
+    background-color: #173f35;
+    color: white;
+    text-align: center;
+    padding: 22px;
+    margin-top: 30px;
+}
+
+/* Responsive Design */
+
+@media (max-width: 850px) {
+    .card-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .blog-layout {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    header {
+        padding: 15px 5%;
+        flex-wrap: wrap;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    nav {
+        display: none;
+        width: 100%;
+        padding-top: 15px;
+    }
+
+    nav.show {
+        display: flex;
+        flex-direction: column;
+    }
+
+    nav a {
+        margin: 8px 0;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .card-container {
+        grid-template-columns: 1fr;
+    }
+
+    .blog-layout {
+        padding: 20px 5%;
+    }
+}
