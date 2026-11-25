@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Blood Donation Awareness</title>
+
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #fff5f5;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* HEADER */
+      header {
+        background-color: #b30000;
+        color: white;
+        text-align: center;
+        padding: 30px 15px;
+      }
+
+      header h1 {
+        font-size: 35px;
+      }
+
+      header p {
+        font-size: 17px;
+      }
+
+      /* NAVIGATION */
+      nav {
+        background-color: #800000;
+        text-align: center;
+        padding: 14px;
+      }
+
+      nav a {
+        color: white;
+        text-decoration: none;
+        margin: 0 18px;
+        font-weight: bold;
+      }
+
+      nav a:hover {
+        color: #ffd6d6;
+      }
+
+      /* MAIN PAGE LAYOUT */
+      .container {
+        display: flex;
+        gap: 20px;
+        max-width: 1200px;
+        margin: 25px auto;
+        padding: 0 15px;
+      }
+
+      main {
+        flex: 3;
+        background-color: white;
+        padding: 25px;
+        border-radius: 10px;
+        box-shadow: 0 2px 8px #ddd;
+      }
+
+      main h2 {
+        color: #b30000;
+        margin-bottom: 12px;
+      }
+
+      main p {
+        margin-bottom: 15px;
+      }
+
+      main img {
+        width: 100%;
+        max-height: 350px;
+        object-fit: cover;
+        border-radius: 10px;
+        margin: 10px 0 20px;
+      }
+
+      .gallery {
+        display: flex;
+        gap: 15px;
+        flex-wrap: wrap;
+      }
+
+      .gallery img {
+        width: calc(50% - 8px);
+        height: 200px;
+        object-fit: cover;
+      }
+
+      /* ASIDE */
+      aside {
+        flex: 1;
+        background-color: #ffe0e0;
+        padding: 22px;
+        border-radius: 10px;
+      }
+
+      aside h2 {
+        color: #990000;
+        margin-bottom: 12px;
+      }
+
+      aside ul {
+        padding-left: 20px;
+        margin-bottom: 20px;
+      }
+
+      aside li {
+        margin-bottom: 10px;
+      }
+
+      .donate-button {
+        display: inline-block;
+        background-color: #b30000;
+        color: white;
+        text-decoration: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-top: 10px;
+      }
+
+      .donate-button:hover {
+        background-color: #800000;
+      }
+
+      /* FOOTER */
+      footer {
+        background-color: #800000;
+        color: white;
+        text-align: center;
+        padding: 20px;
+        margin-top: 25px;
+      }
+
+      /* RESPONSIVE DESIGN */
+      @media (max-width: 768px) {
+        .container {
+          flex-direction: column;
+        }
+
+        nav a {
+          display: inline-block;
+          margin: 5px 8px;
+        }
+
+        header h1 {
+          font-size: 27px;
+        }
+
+        .gallery img {
+          width: 100%;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER SECTION -->
+    <header>
+      <h1>❤️ Blood Donation Awareness</h1>
+      <p>Donate Blood, Save Lives!</p>
+    </header>
+
+    <!-- NAVIGATION SECTION -->
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#importance">Importance</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <!-- MAIN CONTENT AND ASIDE -->
+    <div class="container">
+      <!-- MAIN SECTION -->
+      <main id="home">
+        <h2 id="about">About Blood Donation</h2>
+
+        <p>
+          Blood donation is a voluntary process in which a healthy person
+          donates blood to help patients who need it. Donated blood can help
+          people during surgeries, accidents, childbirth complications and
+          serious illnesses.
+        </p>
+
+        <img
+          src="https://siph-space.sgp1.digitaloceanspaces.com/uploads/editor/1750142455_494109582_1084824073680344_3285121818156014471_n.jpg"
+          alt="A person donating blood"
+        />
+
+        <h2 id="importance">Why Is Blood Donation Important?</h2>
+
+        <p>
+          Blood cannot be manufactured artificially. Hospitals need a regular
+          supply of donated blood to treat patients. A single donation may help
+          more than one patient when blood components are separated.
+        </p>
+
+        <ul>
+          <li>Helps accident and emergency patients.</li>
+          <li>Supports patients undergoing major surgery.</li>
+          <li>Helps people with severe anaemia and blood disorders.</li>
+          <li>Supports mothers with childbirth complications.</li>
+        </ul>
+
+        <h2 id="gallery">Blood Donation Gallery</h2>
+
+        <div class="gallery">
+          <img
+            src="https://www.who.int/images/default-source/searo---images/countries/timor-leste/media_partha/dsc_3286_opt.tmb-1200v.jpg?Culture=en&sfvrsn=3cc00f6b_1"
+            alt="A woman donating blood"
+          />
+
+          <img
+            src="https://www.bbhospital.com.np/Content/img/a4398419-1dfb-4a5a-a0b1-1af74e996920.jpg"
+            alt="Medical staff helping a blood donor"
+          />
+        </div>
+
+        <h2>Our Message</h2>
+
+        <p>
+          Be a hero in someone's life. Encourage voluntary blood donation and
+          spread awareness among your friends and family. Your small act of
+          kindness can make a big difference!
+        </p>
+      </main>
+
+      <!-- ASIDE SECTION -->
+      <aside>
+        <h2>Who Can Donate?</h2>
+
+        <p>
+          Many healthy adults can donate blood, but eligibility depends on
+          health checks and local blood donation rules.
+        </p>
+
+        <ul>
+          <li>Be in good general health.</li>
+          <li>Meet the required age and weight criteria.</li>
+          <li>Pass the health screening at the blood centre.</li>
+          <li>Follow the advice of medical professionals.</li>
+        </ul>
+
+        <h2>Did You Know?</h2>
+
+        <p>
+          Donated blood can be separated into red blood cells, platelets and
+          plasma for different medical needs.
+        </p>
+
+        <h2>Get Involved</h2>
+
+        <p>
+          Contact an authorised blood bank to learn about donation camps and
+          eligibility.
+        </p>
+
+        <a
+          class="donate-button"
+          href="https://eraktkosh.mohfw.gov.in/"
+          target="_blank"
+        >
+          Find Blood Bank
+        </a>
+      </aside>
+    </div>
+
+    <!-- FOOTER SECTION -->
+    <footer id="contact">
+      <p>© 2026 Blood Donation Awareness</p>
+      <p>Donate Blood | Share Life | Save Lives ❤️</p>
+    </footer>
+  </body>
+</html>

@@ -1,0 +1,30 @@
+{% extends "layout.html" %}
+{% block title %}Pharmacy queue · Medicore{% endblock %}
+{% block content %}
+<div class="page-heading">
+  <div><div class="eyebrow dark-eyebrow">PHARMACY WORKSPACE</div><h1>Prescription request queue</h1><p>Review new requests and respond to customers.</p></div>
+  <div class="queue-indicator"><span class="live-dot"></span> Active queue <strong>{{ requests|length }}</strong></div>
+</div>
+<section class="content-card">
+  <div class="section-heading"><div><h2>Requests needing attention</h2><p>Pending requests and conversations awaiting a reply</p></div></div>
+  {% if requests %}
+  <div class="table-responsive">
+    <table class="table align-middle medicore-table">
+      <thead><tr><th>REQUEST / CUSTOMER</th><th>SUBMITTED</th><th>STATUS</th><th class="text-end">ACTION</th></tr></thead>
+      <tbody>
+      {% for req in requests %}
+        <tr>
+          <td><div class="request-title">Prescription #{{ req.id }}</div><div class="request-subtitle">{{ req.customer.username }} · {{ req.medicines_text|truncate(72, true) }}</div></td>
+          <td class="date-cell">{{ req.timestamp.strftime('%d %b %Y, %H:%M') if req.timestamp else '—' }}</td>
+          <td><span class="status-badge status-{{ req.status|lower|replace(' ', '-') }}">{{ req.status }}</span></td>
+          <td class="text-end"><a class="btn btn-sm btn-primary" href="{{ url_for('request_details', request_id=req.id) }}">Review request →</a></td>
+        </tr>
+      {% endfor %}
+      </tbody>
+    </table>
+  </div>
+  {% else %}
+  <div class="empty-state"><div class="empty-icon">✓</div><h3>You're all caught up</h3><p>There are no requests waiting for attention right now.</p></div>
+  {% endif %}
+</section>
+{% endblock %}

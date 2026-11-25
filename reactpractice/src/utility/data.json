@@ -1,0 +1,202 @@
+[
+  {
+    "id": 1,
+    "book_name": "The 3 Mistakes of My Life",
+    "author_name": "Chetan Bhagat",
+    "type": "novel",
+    "published_year": 2008,
+    "price": 200.0,
+    "description": "A story about three friends navigating ambition, friendship, and tragedy amid communal tensions in Gujarat.",
+    "image": "/book/img1.jpeg"
+  },
+  {
+    "id": 2,
+    "book_name": "Wings of Fire",
+    "author_name": "A.P.J. Abdul Kalam",
+    "type": "autobiography",
+    "published_year": 1999,
+    "price": 250.0,
+    "description": "An inspiring autobiography of Dr. A.P.J. Abdul Kalam, tracing his journey from a small town to the Presidency of India.",
+    "image": "/book/img2.jpg"
+  },
+  {
+    "id": 3,
+    "book_name": "The Alchemist",
+    "author_name": "Paulo Coelho",
+    "type": "fiction",
+    "published_year": 1988,
+    "price": 300.0,
+    "description": "A philosophical novel about a shepherd's journey in search of his personal legend and destiny.",
+    "image": "/book/img3.jpg"
+  },
+  {
+    "id": 4,
+    "book_name": "Rich Dad Poor Dad",
+    "author_name": "Robert T. Kiyosaki",
+    "type": "finance",
+    "published_year": 1997,
+    "price": 350.0,
+    "description": "A personal finance classic that contrasts two perspectives on money, investing, and financial independence.",
+    "image": "/book/img4.jpg"
+  },
+  {
+    "id": 5,
+    "book_name": "A Brief History of Time",
+    "author_name": "Stephen Hawking",
+    "type": "science",
+    "published_year": 1988,
+    "price": 400.0,
+    "description": "A groundbreaking book explaining complex scientific concepts like time, black holes, and the universe to general readers.",
+    "image": "https://tse2.mm.bing.net/th/id/OIP.yp1NzsZre4O7CVmaOKADzQAAAA"
+  },
+  {
+    "id": 6,
+    "book_name": "The Diary of a Young Girl",
+    "author_name": "Anne Frank",
+    "type": "diary",
+    "published_year": 1947,
+    "price": 180.0,
+    "description": "The poignant diary of Anne Frank, a young girl hiding from the Nazis during World War II.",
+    "image": "https://www.pluggedin.com/wp-content/uploads/2020/01/anne-frank-diary-of-a-young-girl-cover-image-948x1536.jpeg"
+  },
+  {
+    "id": 7,
+    "book_name": "The Power of Now",
+    "author_name": "Eckhart Tolle",
+    "type": "self-help",
+    "published_year": 1997,
+    "price": 320.0,
+    "description": "A spiritual guide that emphasizes living in the present moment for inner peace and clarity.",
+    "image": "https://cdn.kobo.com/book-images/59e80730-aaad-4b30-ac1d-fd5952880c01/1200/1200/False/the-power-of-now-1.jpg"
+  },
+  {
+    "id": 8,
+    "book_name": "Sapiens: A Brief History of Humankind",
+    "author_name": "Yuval Noah Harari",
+    "type": "history",
+    "published_year": 2011,
+    "price": 450.0,
+    "description": "An exploration of the history and evolution of humankind from primitive tribes to modern civilization.",
+    "image": "https://media.thuprai.com/products/Sapiens__A_Brief_History_of_Humankind.jpg"
+  },
+  {
+    "id": 9,
+    "book_name": "To Kill a Mockingbird",
+    "author_name": "Harper Lee",
+    "type": "classic",
+    "published_year": 1960,
+    "price": 275.0,
+    "description": "A powerful novel addressing racial injustice and moral growth in the American South.",
+    "image": "https://cdn11.bigcommerce.com/s-gibnfyxosi/images/stencil/2560w/products/114990/116752/51IXWZzlgSL__41945.1615559130.jpg"
+  },
+  {
+    "id": 10,
+    "book_name": "Atomic Habits",
+    "author_name": "James Clear",
+    "type": "productivity",
+    "published_year": 2018,
+    "price": 399.0,
+    "description": "A practical guide to building good habits, breaking bad ones, and mastering tiny changes for big results.",
+    "image": "https://tse2.mm.bing.net/th/id/OIP.4XrmT4_VR1OSRq9jcFwL4AHaL0"
+  },
+  {
+    "id": 11,
+    "book_name": "Think and Grow Rich",
+    "author_name": "Napoleon Hill",
+    "type": "self-help",
+    "published_year": 1937,
+    "price": 280.0,
+    "description": "A classic on wealth-building and personal development through mindset and vision.",
+    "image": "https://m.media-amazon.com/images/I/41xK69U6zGL.jpg"
+  },
+  {
+    "id": 12,
+    "book_name": "Ikigai",
+    "author_name": "Héctor García, Francesc Miralles",
+    "type": "philosophy",
+    "published_year": 2016,
+    "price": 290.0,
+    "description": "A Japanese concept for finding purpose and happiness in everyday life.",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/71tbalAHYCL.jpg"
+  },
+  {
+    "id": 13,
+    "book_name": "The Psychology of Money",
+    "author_name": "Morgan Housel",
+    "type": "finance",
+    "published_year": 2020,
+    "price": 349.0,
+    "description": "Timeless lessons on wealth, greed, and happiness by understanding how people think about money.",
+    "image": "https://m.media-amazon.com/images/I/71g2ednj0JL.jpg"
+  },
+  {
+    "id": 14,
+    "book_name": "1984",
+    "author_name": "George Orwell",
+    "type": "dystopian",
+    "published_year": 1949,
+    "price": 260.0,
+    "description": "A chilling depiction of a totalitarian future where surveillance and mind control dominate.",
+    "image": "https://m.media-amazon.com/images/I/41SxTj2xXyL.jpg"
+  },
+  {
+    "id": 15,
+    "book_name": "The Subtle Art of Not Giving a F*ck",
+    "author_name": "Mark Manson",
+    "type": "self-help",
+    "published_year": 2016,
+    "price": 310.0,
+    "description": "A blunt, honest book on focusing only on what truly matters in life.",
+    "image": "https://m.media-amazon.com/images/I/51MT0MbpD7L.jpg"
+  },
+  {
+    "id": 16,
+    "book_name": "The Fault in Our Stars",
+    "author_name": "John Green",
+    "type": "romance",
+    "published_year": 2012,
+    "price": 275.0,
+    "description": "A heartbreaking and inspiring story of two teenage cancer patients who fall in love.",
+    "image": "https://images-na.ssl-images-amazon.com/images/I/81WojUxbbFL.jpg"
+  },
+  {
+    "id": 17,
+    "book_name": "Can't Hurt Me",
+    "author_name": "David Goggins",
+    "type": "biography",
+    "published_year": 2018,
+    "price": 420.0,
+    "description": "A memoir of overcoming poverty, abuse, and limitations to achieve extreme mental toughness.",
+    "image": "https://m.media-amazon.com/images/I/71TlcC2CeaL.jpg"
+  },
+  {
+    "id": 18,
+    "book_name": "The Monk Who Sold His Ferrari",
+    "author_name": "Robin Sharma",
+    "type": "self-help",
+    "published_year": 1997,
+    "price": 295.0,
+    "description": "A spiritual fable about fulfilling your dreams and reaching your destiny.",
+    "image": "https://m.media-amazon.com/images/I/81-b0QG-UoL.jpg"
+  },
+  {
+    "id": 19,
+    "book_name": "Zero to One",
+    "author_name": "Peter Thiel",
+    "type": "business",
+    "published_year": 2014,
+    "price": 330.0,
+    "description": "Notes on startups and how to build the future by doing what no one else is doing.",
+    "image": "https://m.media-amazon.com/images/I/61j2sfD9wRL.jpg"
+  },
+  {
+    "id": 20,
+    "book_name": "Deep Work",
+    "author_name": "Cal Newport",
+    "type": "productivity",
+    "published_year": 2016,
+    "price": 370.0,
+    "description": "Rules for focused success in a distracted world.",
+    "image": "https://m.media-amazon.com/images/I/41HTkCNRcBL.jpg"
+  }
+]

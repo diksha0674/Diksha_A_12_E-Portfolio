@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <title>Registration Form</title>
+    <style>
+      body {
+        background-image: url("background.jpg");
+      }
+      h1 {
+        color: bisque;
+        font-size: xx-large;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <!-- <video style="width: 1500px; height: 100px" controls>
+        <source src="video.mp4" type="video/mp4" />
+        Your browser does not support video.
+      </video> -->
+    </header>
+    <div>
+      <center><h1>welcome to our cafe</h1></center>
+    </div>
+    <nav class="navbar">
+      <div class="nav-link">
+        <h2 style="color: blanchedalmond">home</h2>
+        <h2 style="color: blanchedalmond">about</h2>
+        <h2 style="color: blanchedalmond">menu</h2>
+        <h2 style="color: blanchedalmond">about</h2>
+      </div>
+    </nav>
+    <section class="hero">
+      <p>coffee cup</p>
+      <div class="hero-buttons">
+        <button>explore menu!!</button> <button>about us</button>
+      </div>
+    </section>
+    <center>
+      <h2>Registration Form</h2>
+      <fieldset align="top" style="width: fit-content">
+        <legend>login form</legend>
+
+        <form style="width: 300px" align="left">
+          <label align="left">Full Name:</label>
+          <input
+            type="text"
+            name="fullname"
+            placeholder="Enter your name"
+            required
+          /><br /><br />
+          <label>Email:</label>
+          <input
+            type="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          /><br /><br />
+          <label>Password:</label>
+          <input
+            type="password"
+            name="password"
+            placeholder="Enter password"
+            required
+          /><br /><br />
+          <label>Phone Number:</label>
+          <input type="tel" name="phone" placeholder="9876543210" /><br /><br />
+          <label>Date of Birth:</label>
+          <input type="date" name="dob" /><br /><br />
+          <label>Preferred Time:</label>
+          <input type="time" name="time" /><br /><br />
+          <label>Favorite Color:</label>
+          <input type="color" name="color" /><br /><br />
+          <label>Age:</label>
+          <input type="number" size="5" name="age" /><br /><br />
+          <label>Gender:</label>
+          <input type="radio" name="gender" value="Male" /> Male
+          <input type="radio" name="gender" value="Female" /> Female<br /><br />
+          <label>Hobbies:</label>
+          <input type="checkbox" name="hobby" value="Reading" /> Reading
+          <input type="checkbox" name="hobby" value="Sports" /> Sports
+          <input type="checkbox" name="hobby" value="Music" /> Music
+          <br /><br />
+          <label>Country:</label>
+          <select name="country">
+            <option value="">Select Country</option>
+            <option>India</option>
+            <option>USA</option>
+            <option>Canada</option>
+            <option>Australia</option></select
+          ><br /><br />
+          <label>Address:</label><br />
+          <textarea
+            name="address"
+            rows="4"
+            cols="30"
+            placeholder="Enter your address"
+          ></textarea
+          ><br /><br />
+          <label>Upload Photo:</label>
+          <input type="file" name="photo" /><br /><br />
+          <label>Experience (0-10 Years):</label>
+          <input type="range" name="experience" min="0" max="10" /><br /><br />
+          <input type="submit" value="Register" />
+          <input type="reset" value="Clear" />
+          <!-- <label> upload file</label>
+        <input type="file" name=" file ">
+        <label style="background-color: blue; color: azure;"> date of birth:</label>
+        <input type="date" name="enter date of birth"> -->
+        </form>
+      </fieldset>
+    </center>
+    <footer style="color: azure"><center>site@registered 2026</center></footer>
+  </body>
+</html>

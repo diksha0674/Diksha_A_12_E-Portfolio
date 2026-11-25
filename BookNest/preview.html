@@ -1,0 +1,490 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BookNest | E-Books & Audiobooks</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: #f5f0e8;
+            color: #30251e;
+        }
+
+        /* HEADER */
+
+        header {
+            background-color: #30251e;
+            color: white;
+            padding: 20px 7%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: bold;
+            color: #e8b96b;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 15px;
+        }
+
+        nav a:hover {
+            color: #e8b96b;
+        }
+
+        /* HERO SECTION */
+
+        .hero {
+            min-height: 380px;
+            padding: 70px 8%;
+            display: flex;
+            align-items: center;
+            background: linear-gradient(90deg, #30251e, #674b35);
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 45px;
+            color: #f2c477;
+            margin-bottom: 18px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            line-height: 1.7;
+            margin-bottom: 25px;
+            color: #eee1d1;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #e8b96b;
+            color: #30251e;
+            padding: 12px 25px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background: white;
+        }
+
+        /* SEARCH BAR */
+
+        .search {
+            text-align: center;
+            padding: 30px 10px;
+        }
+
+        .search input {
+            width: 60%;
+            max-width: 500px;
+            padding: 13px;
+            border: 1px solid #c5a77e;
+            border-radius: 25px;
+            outline: none;
+            font-size: 15px;
+        }
+
+        /* COMMON SECTION */
+
+        section {
+            padding: 45px 7%;
+        }
+
+        .title {
+            text-align: center;
+            font-size: 30px;
+            color: #65452d;
+            margin-bottom: 30px;
+        }
+
+        /* BOOK CARDS */
+
+        .book-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 22px;
+        }
+
+        .book-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px #00000015;
+            transition: 0.3s;
+        }
+
+        .book-card:hover {
+            transform: translateY(-7px);
+        }
+
+        .book-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .book-info {
+            padding: 18px;
+            text-align: center;
+        }
+
+        .book-info h3 {
+            color: #674b35;
+            margin-bottom: 8px;
+        }
+
+        .book-info p {
+            color: #777;
+            font-size: 14px;
+            margin-bottom: 12px;
+        }
+
+        .book-info a {
+            color: #a36b2c;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* AUDIOBOOK SECTION */
+
+        .audio-section {
+            background: #30251e;
+            color: white;
+        }
+
+        .audio-section .title {
+            color: #e8b96b;
+        }
+
+        .audio-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+
+        .audio-card {
+            background: #4a382c;
+            padding: 22px;
+            border-radius: 10px;
+        }
+
+        .audio-card h3 {
+            color: #f2c477;
+            margin-bottom: 12px;
+        }
+
+        .audio-card p {
+            margin-bottom: 15px;
+            color: #eee1d1;
+        }
+
+        audio {
+            width: 100%;
+        }
+
+        /* FOOTER */
+
+        footer {
+            background: #201811;
+            color: white;
+            text-align: center;
+            padding: 35px 15px;
+        }
+
+        footer h2 {
+            color: #e8b96b;
+            margin-bottom: 12px;
+        }
+
+        footer p {
+            color: #ccc;
+            margin-bottom: 15px;
+        }
+
+        footer a {
+            color: #e8b96b;
+            text-decoration: none;
+            margin: 10px;
+        }
+
+        .copyright {
+            margin-top: 25px;
+            font-size: 13px;
+            color: #aaa;
+        }
+
+        /* RESPONSIVE DESIGN */
+
+        @media(max-width: 850px) {
+            .book-container {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media(max-width: 600px) {
+            header {
+                flex-direction: column;
+            }
+
+            nav {
+                text-align: center;
+            }
+
+            nav a {
+                display: inline-block;
+                margin: 7px;
+            }
+
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .book-container,
+            .audio-container {
+                grid-template-columns: 1fr;
+            }
+
+            .search input {
+                width: 90%;
+            }
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <!-- HEADER -->
+
+    <header>
+
+        <div class="logo">📚 BookNest</div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#ebooks">E-Books</a>
+            <a href="#audio">Audiobooks</a>
+            <a href="#about">About</a>
+        </nav>
+
+    </header>
+
+
+    <!-- HERO SECTION -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <h1>Discover Your Next Favourite Book</h1>
+
+            <p>
+                Explore a world of knowledge, imagination and stories.
+                Read amazing e-books and listen to your favourite
+                audiobooks anytime, anywhere.
+            </p>
+
+            <a href="#ebooks" class="btn">Explore Books</a>
+
+        </div>
+
+    </section>
+
+
+    <!-- SEARCH SECTION -->
+
+    <div class="search">
+
+        <input type="text"
+        placeholder="Search your favourite books...">
+
+    </div>
+
+
+    <!-- EBOOK SECTION -->
+
+    <section id="ebooks">
+
+        <h2 class="title">Popular E-Books</h2>
+
+        <div class="book-container">
+
+            <!-- BOOK 1 -->
+
+            <div class="book-card">
+
+                <img src="images/book1.jpg" alt="Book One">
+
+                <div class="book-info">
+                    <h3>Atomic Habits</h3>
+                    <p>James Clear | Self Improvement</p>
+                    <a href="#">Read Book →</a>
+                </div>
+
+            </div>
+
+
+            <!-- BOOK 2 -->
+
+            <div class="book-card">
+
+                <img src="images/book2.jpg" alt="Book Two">
+
+                <div class="book-info">
+                    <h3>The Alchemist</h3>
+                    <p>Paulo Coelho | Fiction</p>
+                    <a href="#">Read Book →</a>
+                </div>
+
+            </div>
+
+
+            <!-- BOOK 3 -->
+
+            <div class="book-card">
+
+                <img src="images/book3.jpg" alt="Book Three">
+
+                <div class="book-info">
+                    <h3>Rich Dad Poor Dad</h3>
+                    <p>Robert Kiyosaki | Finance</p>
+                    <a href="#">Read Book →</a>
+                </div>
+
+            </div>
+
+
+            <!-- BOOK 4 -->
+
+            <div class="book-card">
+
+                <img src="images/book4.jpg" alt="Book Four">
+
+                <div class="book-info">
+                    <h3>Ikigai</h3>
+                    <p>Hector Garcia | Lifestyle</p>
+                    <a href="#">Read Book →</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- AUDIOBOOK SECTION -->
+
+    <section class="audio-section" id="audio">
+
+        <h2 class="title">Listen to Audiobooks</h2>
+
+        <div class="audio-container">
+
+            <div class="audio-card">
+
+                <h3>🎧 The Power of Positive Thinking</h3>
+
+                <p>Listen to an inspiring audiobook.</p>
+
+                <!-- ADD YOUR AUDIO FILE HERE -->
+
+                <audio controls>
+                    <source src="audio/book1.mp3" type="audio/mpeg">
+                    Your browser does not support audio.
+                </audio>
+
+            </div>
+
+
+            <div class="audio-card">
+
+                <h3>🎧 The Art of Learning</h3>
+
+                <p>Explore knowledge through listening.</p>
+
+                <!-- ADD YOUR SECOND AUDIO FILE HERE -->
+
+                <audio controls>
+                    <source src="audio/book2.mp3" type="audio/mpeg">
+                    Your browser does not support audio.
+                </audio>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ABOUT SECTION -->
+
+    <section id="about">
+
+        <h2 class="title">About BookNest</h2>
+
+        <p style="text-align:center; max-width:750px; margin:auto; line-height:1.8; color:#66594e;">
+
+            BookNest is a digital reading platform where book lovers
+            can discover interesting e-books and audiobooks.
+            Our goal is to make reading and learning easy,
+            enjoyable and accessible for everyone.
+
+        </p>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <h2>📚 BookNest</h2>
+
+        <p>Your Digital Library, Anytime and Anywhere.</p>
+
+        <div>
+            <a href="#home">Home</a>
+            <a href="#ebooks">E-Books</a>
+            <a href="#audio">Audiobooks</a>
+            <a href="#about">About Us</a>
+        </div>
+
+        <div class="copyright">
+            &copy; 2026 BookNest. All Rights Reserved.
+        </div>
+
+    </footer>
+
+</body>
+</html>

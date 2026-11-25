@@ -1,0 +1,24 @@
+{% extends "layout.html" %}
+{% block title %}New prescription request · Medicore{% endblock %}
+{% block content %}
+<div class="form-page">
+  <a class="back-link" href="{{ url_for('customer_dashboard') }}">← Back to dashboard</a>
+  <div class="form-layout">
+    <section class="form-intro">
+      <div class="eyebrow dark-eyebrow">NEW REQUEST</div>
+      <h1>What do you need from your pharmacy?</h1>
+      <p>Enter the medicine details below. Your pharmacy can review the request and message you if more information is needed.</p>
+      <div class="info-panel"><span class="info-icon">i</span><div><strong>Helpful details to include</strong><ul><li>Medicine name and strength</li><li>Quantity, if known</li><li>Any relevant notes for the pharmacy</li></ul></div></div>
+    </section>
+    <section class="content-card request-form-card">
+      <h2>Prescription details</h2><p class="muted">Fields marked with * are required.</p>
+      <form method="post" action="{{ url_for('new_prescription') }}">
+        <label class="form-label" for="medicines">Medicine list *</label>
+        <textarea class="form-control medicine-textarea" id="medicines" name="medicines" rows="8" maxlength="10000" placeholder="Example:&#10;Medicine name — strength&#10;Quantity (if known)&#10;Additional notes" required></textarea>
+        <div class="form-text">Please provide accurate information. Do not use this form for emergencies.</div>
+        <div class="form-actions"><a class="btn btn-light border" href="{{ url_for('customer_dashboard') }}">Cancel</a><button class="btn btn-primary" type="submit">Submit request →</button></div>
+      </form>
+    </section>
+  </div>
+</div>
+{% endblock %}
